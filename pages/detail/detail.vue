@@ -184,13 +184,55 @@
 				descPics: []
 			}
 		},
-
 		onLoad(option) {
 			this.couponId = option.coupon_id;
 			this.platformId = option.platform_id;
 			this.getDetail();
+
+			this.setTitleBar();
+		},
+		/**
+		 * 用户点击右上角分享
+		 */
+		onShareAppMessage() {
+			let couponInfo = this.couponInfo;
+			let query = {
+				coupon_id: couponInfo.coupon_id,
+				platform_id: couponInfo.platform_id,
+				from_page: 'wxmp_share_card',
+				word: ''
+			}
+			let path = `${this.getCurPageRoute()}${uni.commonUtil.queryToString(query)}`;
+			return {
+				title: couponInfo.title,
+				path: path,
+				imageurl: couponInfo.cover_pics[0]
+			}
 		},
 		methods: {
+			/**
+			 * 获取当前路径
+			 */
+			getCurPageRoute() {
+				let pages = getCurrentPages();
+				let curPage = pages[pages.length - 1];
+				return curPage.route;
+			},
+			/**
+			 * 设置标题栏
+			 */
+			setTitleBar() {
+				// #ifdef MP-WEIXIN
+				uni.setNavigationBarColor({
+					backgroundColor: '#FF512E'
+				})
+				// #endif
+				// #ifdef MP-ALIPAY
+				uni.setNavigationBarColor({
+					backgroundColor: '#ffd21c'
+				})
+				// #endif
+			},
 			/**
 			 * 获取详情信息
 			 */
@@ -238,6 +280,13 @@
 			clickChangeTab(type) {
 				console.log(type);
 				this.activeIndex = type
+			},
+			/**
+			 * swiper 滑动事件
+			 */
+			swiperChange(e) {
+				let swiperCurIndex = e.detail.current;
+				this.swiperCurIndex = swiperCurIndex;
 			},
 			/**
 			 * js处理券信息

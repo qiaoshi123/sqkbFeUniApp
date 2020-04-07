@@ -22,7 +22,9 @@
 		// #endif
 		{
 			"path": "pages/detail/detail",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
 		}
 	],
 	"globalStyle": {
