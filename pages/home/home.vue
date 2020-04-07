@@ -242,7 +242,7 @@
 		}
 
 		>.search-area {
-			/* #ifdef APP-PLUS */
+			/* #ifdef MP-WEIXIN */
 			background: @redBg;
 			/* #endif */
 			/* #ifdef MP-ALIPAY */
