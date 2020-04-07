@@ -193,6 +193,7 @@ __webpack_require__.r(__webpack_exports__);
   onLoad: function onLoad() {
     this.getHotWord();
     this.getCouponList();
+
   },
   methods: {
     /**

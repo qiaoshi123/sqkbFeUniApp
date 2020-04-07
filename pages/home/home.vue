@@ -60,6 +60,7 @@
 		onLoad() {
 			this.getHotWord();
 			this.getCouponList();
+		
 		},
 		methods: {
 			/**
