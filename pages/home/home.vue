@@ -238,9 +238,10 @@
 		position: relative;
 		top: -12rpx;
 		/*历史搜索*/
-		
+
 		.history-search-area {
 			margin: 22rpx 24rpx 0 32rpx;
+
 			.history-title {
 				height: 32rpx;
 				font-size: 28rpx;
@@ -248,6 +249,7 @@
 				font-weight: 500;
 				color: rgba(49, 49, 52, 1);
 				line-height: 32rpx;
+
 				.delete-all {
 					width: 28rpx;
 					height: 30rpx;
@@ -257,10 +259,12 @@
 					margin-right: -25rpx;
 				}
 			}
+
 			.history-group {
 				display: flex;
 				justify-content: start;
 				flex-wrap: wrap;
+
 				.history-item {
 					height: 48rpx;
 					line-height: 48rpx;
@@ -275,12 +279,14 @@
 					color: rgba(97, 97, 104, 1);
 				}
 			}
-			
+
 		}
+
 		/*搜索发现*/
-		
+
 		.discover-search-area {
 			margin: 32rpx 36rpx 0;
+
 			.discover-title {
 				height: 32rpx;
 				font-size: 28rpx;
@@ -289,11 +295,13 @@
 				color: rgba(49, 49, 52, 1);
 				line-height: 32rpx;
 			}
+
 			.discover-group {
 				/* margin-top: 8rpx; */
 				display: flex;
 				justify-content: start;
 				flex-wrap: wrap;
+
 				.discover-item {
 					height: 48rpx;
 					line-height: 48rpx;
@@ -311,23 +319,24 @@
 					color: rgba(97, 97, 104, 1);
 				}
 			}
-			
+
 		}
-	/*商品*/
-	.coupon-area {
-		margin-top: 56rpx;
-		.title-bg {
-			display: block;
-			width: 331rpx;
-			height: 47rpx;
-			margin: 0 auto;
+		/*商品*/
+		.coupon-area {
+			margin-top: 56rpx;
+
+			.title-bg {
+				display: block;
+				width: 331rpx;
+				height: 47rpx;
+				margin: 0 auto;
+			}
+
+			.coupon-list {
+				margin-top: 24rpx;
+				padding-bottom: 24rpx;
+			}
 		}
-		.coupon-list {
-			margin-top: 24rpx;
-			padding-bottom: 24rpx;
-		}
+
 	}
-		
-	}
-	
 </style>
