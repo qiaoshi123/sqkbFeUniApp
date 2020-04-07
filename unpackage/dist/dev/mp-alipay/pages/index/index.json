@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "省钱快报",
+  "usingComponents": {
+    "uni-card": "/components/uni-card/uni-card",
+    "uni-link": "/components/uni-link/uni-link"
+  }
+}

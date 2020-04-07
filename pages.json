@@ -1,0 +1,19 @@
+{
+	"pages": [{
+		"path": "pages/home/home",
+		"style": {
+			"navigationBarTitleText": "省钱快报",
+			"enablePullDownRefresh":true,
+			"navigationBarBackgroundColor": "#FF512E"
+		}
+	}, {
+		"path": "pages/detail/detail",
+		"style": {}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#000000",
+		"backgroundColor": "#ffffff"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "省钱快报",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#FF512E",
+  "usingComponents": {
+    "sq-single-coupon": "/components/sq-single-coupon/sq-single-coupon"
+  }
+}
