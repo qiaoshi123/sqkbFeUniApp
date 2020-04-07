@@ -177,6 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 {
   components: {
     SqSingleCoupon: SqSingleCoupon },
@@ -185,10 +186,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       searchFixed: false,
       showAddMpToList: true,
-      couponList: [] };
+      couponList: [],
+      hotList: [] };
 
   },
   onLoad: function onLoad() {
+    this.getHotWord();
     this.getCouponList();
   },
   methods: {
@@ -199,9 +202,39 @@ __webpack_require__.r(__webpack_exports__);
 
     },
     /**
+        * 点击搜索词
+        */
+    clickSearchItem: function clickSearchItem() {
+
+    },
+    /**
+        * 获取 搜索发现热词
+        */
+    getHotWord: function getHotWord() {var _this = this;
+      var options = {
+        url: uni.apis.microHotWord,
+        data: {} };
+
+      uni.requestSqkb(options).then(function (res) {
+        if (res.status_code == 1) {
+          var hotList = res.data || [];
+          _this.hotList = hotList;
+        } else {
+          uni.showToast({
+            title: res.message });
+
+        }
+      }).catch(function (e) {
+        console.log(e);
+        uni.showToast({
+          title: e.message });
+
+      });
+    },
+    /**
         * 获取推荐商品列表
         */
-    getCouponList: function getCouponList() {var _this = this;
+    getCouponList: function getCouponList() {var _this2 = this;
       var options = {
         url: uni.apis.microRecommend,
         data: {},
@@ -210,12 +243,17 @@ __webpack_require__.r(__webpack_exports__);
       uni.requestSqkb(options).then(function (res) {
         if (res.status_code == 1) {
           var couponList = res.data.coupon_list || [];
-          _this.couponList = couponList;
+          _this2.couponList = couponList;
         } else {
           uni.showToast({
             title: res.meassge });
 
         }
+      }).catch(function (e) {
+        console.log(e);
+        uni.showToast({
+          title: e.message });
+
       });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

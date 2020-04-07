@@ -26,12 +26,13 @@
 		        <view class="history-item ellipsis" wx:for="{{historyWords}}" wx:for-item="item" wx:key="index" data-word="{{item}}" bindtap="clickSearchItem">{{item}}</view>
 		      </view>
 		    </view>
-		    <view class="discover-search-area" wx:if="{{hotList.length>0}}">
-		      <view class="discover-title">搜索发现</view>
-		      <view class="discover-group">
-		        <view class="discover-item ellipsis" wx:for="{{hotList}}" wx:for-item="item" wx:key="index" data-word="{{item}}" bindtap="clickSearchItem">{{item}}</view>
-		      </view>
-		    </view> -->
+			-->
+			<view class="discover-search-area" v-if="hotList.length>0">
+				<view class="discover-title">搜索发现</view>
+				<view class="discover-group">
+					<view class="discover-item ellipsis" v-for="(v,i) in hotList" @click="clickSearchItem">{{v}}</view>
+				</view>
+			</view>
 			<view class="coupon-area" v-if="couponList.length > 0">
 				<image src="/static/image/home/home-coupon-area-bg.png" class="title-bg"></image>
 				<view class="coupon-list">
@@ -45,17 +46,19 @@
 <script>
 	import SqSingleCoupon from '@/components/sq-single-coupon/sq-single-coupon.vue'
 	export default {
-		components:{
+		components: {
 			SqSingleCoupon
 		},
 		data() {
 			return {
 				searchFixed: false,
 				showAddMpToList: true,
-				couponList: []
+				couponList: [],
+				hotList: []
 			};
 		},
 		onLoad() {
+			this.getHotWord();
 			this.getCouponList();
 		},
 		methods: {
@@ -64,6 +67,36 @@
 			 */
 			clickSearchArea() {
 
+			},
+			/**
+			 * 点击搜索词
+			 */
+			clickSearchItem() {
+
+			},
+			/**
+			 * 获取 搜索发现热词
+			 */
+			getHotWord() {
+				let options = {
+					url: uni.apis.microHotWord,
+					data: {}
+				}
+				uni.requestSqkb(options).then(res => {
+					if (res.status_code == 1) {
+						let hotList = res.data || [];
+						this.hotList = hotList;
+					} else {
+						uni.showToast({
+							title: res.message
+						})
+					}
+				}).catch(e => {
+					console.log(e);
+					uni.showToast({
+						title: e.message
+					})
+				})
 			},
 			/**
 			 * 获取推荐商品列表
@@ -83,6 +116,11 @@
 							title: res.meassge
 						})
 					}
+				}).catch(e => {
+					console.log(e);
+					uni.showToast({
+						title: e.message
+					})
 				})
 			},
 		}
