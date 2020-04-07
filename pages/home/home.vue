@@ -49,6 +49,7 @@
 		components: {
 			SqSingleCoupon
 		},
+		
 		data() {
 			return {
 				searchFixed: false,
