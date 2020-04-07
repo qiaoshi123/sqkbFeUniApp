@@ -161,6 +161,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 {
   components: {
     SqSingleCoupon: SqSingleCoupon },
@@ -177,12 +179,19 @@ __webpack_require__.r(__webpack_exports__);
   onLoad: function onLoad() {
     this.getHotWord();
     this.getCouponList();
-
+    this.getSearchFixedNum();
+    console.log(uni.getSystemInfoSync());
   },
   methods: {
     /**
-              * 点击搜索框
+              * 点击引导
               */
+    clickSqkbWayEnter: function clickSqkbWayEnter() {
+
+    },
+    /**
+        * 点击搜索框
+        */
     clickSearchArea: function clickSearchArea() {
 
     },
@@ -250,6 +259,34 @@ __webpack_require__.r(__webpack_exports__);
     onPullDownRefresh: function onPullDownRefresh() {
       uni.showLoading();
       this.getCouponList();
+    },
+
+    /**
+        * 获取搜索框fixed边界值
+        */
+    getSearchFixedNum: function getSearchFixedNum() {var _this3 = this;
+      var query = uni.createSelectorQuery();
+      query.select('#searchArea').boundingClientRect();
+      query.exec(function (res) {
+        _this3.searchFixedTop = res[0].top;
+      });
+    },
+    /**
+        * 监听页面滑动
+        */
+    onPageScroll: function onPageScroll(e) {
+      var st = e.scrollTop;
+      if (st >= this.searchFixedTop) {
+        this.searchFixed = true;
+        uni.setNavigationBarTitle({
+          title: '省钱快报优惠券查询' });
+
+      } else {
+        this.searchFixed = false;
+        uni.setNavigationBarTitle({
+          title: '' });
+
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-alipay/dist/index.js */ 1)["default"]))
 

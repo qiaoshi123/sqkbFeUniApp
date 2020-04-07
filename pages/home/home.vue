@@ -4,10 +4,12 @@
 		 v-if="showAddMpToList"></image>
 		<view class="header">
 			<view class="name">省钱快报优惠券查询</view>
-			<view class="sqkb-way-area clearfix" bindtap="clickSqkbWayEnter">
+			<!-- #ifdef MP-WEIXIN -->
+			<view class="sqkb-way-area clearfix" @click="clickSqkbWayEnter">
 				<image src="/static/image/home/sqkb-way-tips.png" class="tips"></image>
 				<image src="/static/image/home/sqkb-way-btn.png" class="way-btn"></image>
 			</view>
+			<!-- #endif -->
 			<image src="/static/image/home/home-fee-bg.png" class="fee-bg"></image>
 			<view class="search-area-space" v-if="searchFixed"></view>
 			<view class="search-area" :class="{'fixed':searchFixed,'not-fixed':!searchFixed}" id="searchArea">
@@ -49,7 +51,7 @@
 		components: {
 			SqSingleCoupon
 		},
-		
+
 		data() {
 			return {
 				searchFixed: false,
@@ -61,9 +63,16 @@
 		onLoad() {
 			this.getHotWord();
 			this.getCouponList();
-		
+			this.getSearchFixedNum();
+			console.log(uni.getSystemInfoSync())
 		},
 		methods: {
+			/**
+			 * 点击引导
+			 */
+			clickSqkbWayEnter() {
+
+			},
 			/**
 			 * 点击搜索框
 			 */
@@ -88,7 +97,7 @@
 					if (res.status_code == 1) {
 						let hotList = res.data || [];
 						this.hotList = hotList;
-						
+
 					} else {
 						uni.showToast({
 							title: res.message
@@ -135,13 +144,43 @@
 				uni.showLoading();
 				this.getCouponList();
 			},
+
+			/**
+			 * 获取搜索框fixed边界值
+			 */
+			getSearchFixedNum() {
+				const query = uni.createSelectorQuery()
+				query.select('#searchArea').boundingClientRect()
+				query.exec((res) => {
+					this.searchFixedTop = res[0].top
+				})
+			},
+			/**
+			 * 监听页面滑动
+			 */
+			onPageScroll: function(e) {
+				let st = e.scrollTop;
+				if (st >= this.searchFixedTop) {
+					this.searchFixed = true;
+					uni.setNavigationBarTitle({
+						title: '省钱快报优惠券查询'
+					})
+				} else {
+					this.searchFixed = false;
+					uni.setNavigationBarTitle({
+						title: ''
+					})
+				}
+			},
+
 		}
 	}
 </script>
 
 <style lang="less">
-	@redBg:#ff512e;
-	@orangeBg:#ffd21c;
+	@redBg: #ff512e;
+	@orangeBg: #ffd21c;
+
 	.add-mp-to-list {
 		width: 424rpx;
 		position: fixed;
@@ -208,6 +247,7 @@
 			/* #endif */
 			/* #ifdef MP-ALIPAY */
 			background: @orangeBg;
+
 			/* #endif */
 			>.search-input-view {
 				margin: 0 auto;
