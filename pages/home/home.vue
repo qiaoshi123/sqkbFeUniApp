@@ -237,106 +237,94 @@
 		overflow: hidden;
 		position: relative;
 		top: -12rpx;
-	}
-
-	/*历史搜索*/
-
-	.history-search-area {
-		margin: 22rpx 24rpx 0 32rpx;
-	}
-
-	.history-search-area .history-title {
-		height: 32rpx;
-		font-size: 28rpx;
-		font-family: PingFangSC-Medium, PingFang SC;
-		font-weight: 500;
-		color: rgba(49, 49, 52, 1);
-		line-height: 32rpx;
-	}
-
-	.history-search-area .delete-all {
-		width: 28rpx;
-		height: 30rpx;
-		padding-left: 20rpx;
-		padding-right: 25rpx;
-		float: right;
-		margin-right: -25rpx;
-	}
-
-	.history-group {
-		display: flex;
-		justify-content: start;
-		flex-wrap: wrap;
-	}
-
-	.history-group .history-item {
-		height: 48rpx;
-		line-height: 48rpx;
-		padding: 0 16rpx;
-		margin: 16rpx 12rpx 0 0;
-		background: rgba(238, 238, 238, 1);
-		border-radius: 24rpx;
-		max-width: 100%;
-		font-size: 24rpx;
-		font-family: PingFangSC-Regular, PingFang SC;
-		font-weight: 400;
-		color: rgba(97, 97, 104, 1);
-	}
-
-	/*搜索发现*/
-
-	.discover-search-area {
-		margin: 32rpx 36rpx 0;
-	}
-
-	.discover-search-area .discover-title {
-		height: 32rpx;
-		font-size: 28rpx;
-		font-family: PingFangSC-Medium, PingFang SC;
-		font-weight: 500;
-		color: rgba(49, 49, 52, 1);
-		line-height: 32rpx;
-	}
-
-	.discover-group {
-		/* margin-top: 8rpx; */
-		display: flex;
-		justify-content: start;
-		flex-wrap: wrap;
-	}
-
-	.discover-group .discover-item {
-		height: 48rpx;
-		line-height: 48rpx;
-		padding: 0 16rpx;
-		margin: 16rpx 12rpx 0 0;
-		background: rgba(238, 238, 238, 1);
-		border-radius: 24rpx;
-		max-width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		font-size: 24rpx;
-		font-family: PingFangSC-Regular, PingFang SC;
-		font-weight: 400;
-		color: rgba(97, 97, 104, 1);
-	}
-
-	/*商品*/
-
-	.coupon-area {
-		margin-top: 56rpx;
-	}
-
-	.coupon-area .title-bg {
-		display: block;
-		width: 331rpx;
-		height: 47rpx;
-		margin: 0 auto;
-	}
-
-	.coupon-list {
-		margin-top: 24rpx;
-		padding-bottom: 24rpx;
+		/*历史搜索*/
+		
+		.history-search-area {
+			margin: 22rpx 24rpx 0 32rpx;
+			.history-title {
+				height: 32rpx;
+				font-size: 28rpx;
+				font-family: PingFangSC-Medium, PingFang SC;
+				font-weight: 500;
+				color: rgba(49, 49, 52, 1);
+				line-height: 32rpx;
+				.delete-all {
+					width: 28rpx;
+					height: 30rpx;
+					padding-left: 20rpx;
+					padding-right: 25rpx;
+					float: right;
+					margin-right: -25rpx;
+				}
+			}
+			.history-group {
+				display: flex;
+				justify-content: start;
+				flex-wrap: wrap;
+				.history-item {
+					height: 48rpx;
+					line-height: 48rpx;
+					padding: 0 16rpx;
+					margin: 16rpx 12rpx 0 0;
+					background: rgba(238, 238, 238, 1);
+					border-radius: 24rpx;
+					max-width: 100%;
+					font-size: 24rpx;
+					font-family: PingFangSC-Regular, PingFang SC;
+					font-weight: 400;
+					color: rgba(97, 97, 104, 1);
+				}
+			}
+			
+		}
+		/*搜索发现*/
+		
+		.discover-search-area {
+			margin: 32rpx 36rpx 0;
+			.discover-title {
+				height: 32rpx;
+				font-size: 28rpx;
+				font-family: PingFangSC-Medium, PingFang SC;
+				font-weight: 500;
+				color: rgba(49, 49, 52, 1);
+				line-height: 32rpx;
+			}
+			.discover-group {
+				/* margin-top: 8rpx; */
+				display: flex;
+				justify-content: start;
+				flex-wrap: wrap;
+				.discover-item {
+					height: 48rpx;
+					line-height: 48rpx;
+					padding: 0 16rpx;
+					margin: 16rpx 12rpx 0 0;
+					background: rgba(238, 238, 238, 1);
+					border-radius: 24rpx;
+					max-width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					font-size: 24rpx;
+					font-family: PingFangSC-Regular, PingFang SC;
+					font-weight: 400;
+					color: rgba(97, 97, 104, 1);
+				}
+			}
+			/*商品*/
+			.coupon-area {
+				margin-top: 56rpx;
+				.title-bg {
+					display: block;
+					width: 331rpx;
+					height: 47rpx;
+					margin: 0 auto;
+				}
+				.coupon-list {
+					margin-top: 24rpx;
+					padding-bottom: 24rpx;
+				}
+			}
+		}
 	}
 </style>

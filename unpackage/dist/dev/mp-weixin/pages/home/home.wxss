@@ -101,12 +101,13 @@
   overflow: hidden;
   position: relative;
   top: -12rpx;
+  /*历史搜索*/
+  /*搜索发现*/
 }
-/*历史搜索*/
-.history-search-area {
+.content .history-search-area {
   margin: 22rpx 24rpx 0 32rpx;
 }
-.history-search-area .history-title {
+.content .history-search-area .history-title {
   height: 32rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Medium, PingFang SC;
@@ -114,7 +115,7 @@
   color: #313134;
   line-height: 32rpx;
 }
-.history-search-area .delete-all {
+.content .history-search-area .history-title .delete-all {
   width: 28rpx;
   height: 30rpx;
   padding-left: 20rpx;
@@ -122,7 +123,7 @@
   float: right;
   margin-right: -25rpx;
 }
-.history-group {
+.content .history-search-area .history-group {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -132,7 +133,7 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.history-group .history-item {
+.content .history-search-area .history-group .history-item {
   height: 48rpx;
   line-height: 48rpx;
   padding: 0 16rpx;
@@ -145,11 +146,11 @@
   font-weight: 400;
   color: #616168;
 }
-/*搜索发现*/
-.discover-search-area {
+.content .discover-search-area {
   margin: 32rpx 36rpx 0;
+  /*商品*/
 }
-.discover-search-area .discover-title {
+.content .discover-search-area .discover-title {
   height: 32rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Medium, PingFang SC;
@@ -157,7 +158,7 @@
   color: #313134;
   line-height: 32rpx;
 }
-.discover-group {
+.content .discover-search-area .discover-group {
   /* margin-top: 8rpx; */
   display: -webkit-box;
   display: -webkit-flex;
@@ -168,7 +169,7 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.discover-group .discover-item {
+.content .discover-search-area .discover-group .discover-item {
   height: 48rpx;
   line-height: 48rpx;
   padding: 0 16rpx;
@@ -184,17 +185,16 @@
   font-weight: 400;
   color: #616168;
 }
-/*商品*/
-.coupon-area {
+.content .discover-search-area .coupon-area {
   margin-top: 56rpx;
 }
-.coupon-area .title-bg {
+.content .discover-search-area .coupon-area .title-bg {
   display: block;
   width: 331rpx;
   height: 47rpx;
   margin: 0 auto;
 }
-.coupon-list {
+.content .discover-search-area .coupon-area .coupon-list {
   margin-top: 24rpx;
   padding-bottom: 24rpx;
 }
