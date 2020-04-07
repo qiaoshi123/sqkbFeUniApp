@@ -21,9 +21,12 @@ export let requestSqkb = ({
 	}
 	let params = addCommonParams(data);
 	let appSecret = appSecrets[params.client_id];
+	params.sign = setSign(params,appSecret);
 	return uni.request({
 		url, 
-		data,
+		data:{
+			...params
+		},
 		header,
 	}).then(data=>{
 		if(loading){
