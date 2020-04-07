@@ -79,26 +79,26 @@
 				<!-- 相似推荐有数据  && 详情有数据 -->
 				<view class="tabs" v-if="recommendList.length>0 && descPics.length>0">
 					<view class="item" data-index="0">
-						<view :class="['text',{'active':activeIndex==0}]">相似推荐</view>
+						<view :class="['text',{'active':activeIndex==0}]" @click="clickChangeTab(0)">相似推荐</view>
 					</view>
 					<view class="item" data-index="1">
-						<view :class="['text',{'active':activeIndex==1}]">商品详情</view>
+						<view :class="['text',{'active':activeIndex==1}]" @click="clickChangeTab(1)">商品详情</view>
 					</view>
 				</view>
 				<!-- 相似推荐有数据 && 详情没数据 -->
 				<view class="tabs-one" v-if="recommendList.length>0 && descPics.length<=0">
 					<view class="item">
-						<view class="text active" data-index="1" @click="clickChangeTab">相似推荐</view>
+						<view class="text active" data-index="1" @click="clickChangeTab(0)">相似推荐</view>
 					</view>
 				</view>
 				<!-- 相似推荐无数据 && 详情有数据 -->
-						<view class="tabs-one" v-if="recommendList.length<=0 && descPics.length>0">
+				<view class="tabs-one" v-if="recommendList.length<=0 && descPics.length>0">
 					<view class="item">
-						<view class="text active" data-index="1" @click="clickChangeTab">商品详情</view>
+						<view class="text active" data-index="1" @click="clickChangeTab(1)">商品详情</view>
 					</view>
 				</view>
 
-					<view class="content">
+				<view class="content">
 					<view class="recommed-list" v-if="activeIndex==0">
 						<SqSingleCoupon v-for="(item,key) in recommendList" :key="item.coupon_id" :coupon="item"></SqSingleCoupon>
 					</view>
@@ -108,7 +108,7 @@
 				</view>
 			</view>
 			<!-- 底部购买 -->
-				<view class="footer">
+			<view class="footer">
 				<view class="wxshare">
 					<image src="/static/image/coupon/wx-icon.png"></image>
 					<view class="share-text">分享</view>
@@ -124,7 +124,7 @@
 </template>
 <script>
 	import SqSingleCoupon from '@/components/sq-single-coupon/sq-single-coupon.vue'
-	
+
 	export default {
 		components: {
 			SqSingleCoupon
@@ -213,7 +213,7 @@
 						let inputDefaultText = this.getInputDetaultText(couponInfo);
 						//生成券信息
 						let ticketInfo = this.getTicketInfo(couponInfo);
-						
+
 						this.couponInfo = couponInfo;
 						this.ticketInfo = ticketInfo;
 						this.inputDefaultText = inputDefaultText;
@@ -232,15 +232,13 @@
 					})
 				})
 			},
-			  /**
-			   * 切换相似推荐和商品详情
-			   */
-			  clickChangeTab(e) {
-				  console.log(e);
-			    this.setData({
-			      activeIndex: 1
-			    })
-			  },
+			/**
+			 * 切换相似推荐和商品详情
+			 */
+			clickChangeTab(type) {
+				console.log(type);
+				this.activeIndex = type
+			},
 			/**
 			 * js处理券信息
 			 */
@@ -313,7 +311,7 @@
 						} else if (recommendList.length > 0 && descPics.length > 0) {
 							activeIndex = 0;
 						}
-						
+
 						this.recommendList = recommendList;
 						this.descPics = descPics;
 						this.activeIndex = activeIndex;
