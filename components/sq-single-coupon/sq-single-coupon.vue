@@ -61,7 +61,9 @@
 			 * 点击商品
 			 */
 			clickCoupon() {
-				console.log("点击商品跳转")
+				uni.navigateTo({
+					url:`/pages/detail/detail?coupon_id=${this.coupon.coupon_id}&platform_id=${this.coupon.platform_id}`
+				})
 			}
 		}
 	}

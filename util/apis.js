@@ -23,9 +23,11 @@ let apis = {
 }
 let apiBaseUrl;
 if(process.env.NODE_ENV === 'development'){
-    apiBaseUrl = apiBaseUrls.dev;
+	 apiBaseUrl = apiBaseUrls.dev;
+}else if(process.env.NODE_ENV === 'beta'){
+     apiBaseUrl = apiBaseUrls.beta;
 }else{
-     apiBaseUrl = apiBaseUrls.prod;
+	apiBaseUrl = apiBaseUrls.prod;
 }
 Object.keys(apis).forEach(key => {
   apis[key] = `${apiBaseUrl}${apis[key]}`
