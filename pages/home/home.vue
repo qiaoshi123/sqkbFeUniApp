@@ -140,6 +140,8 @@
 </script>
 
 <style lang="less">
+	@redBg:#ff512e;
+	@orangeBg:#ffd21c;
 	.add-mp-to-list {
 		width: 424rpx;
 		position: fixed;
@@ -149,7 +151,12 @@
 	}
 
 	.header {
-		background: #ff512e;
+		/* #ifdef MP-WEIXIN */
+		background: @redBg;
+		/* #endif */
+		/* #ifdef MP-ALIPAY */
+		background: @orangeBg;
+		/* #endif */
 		padding-bottom: 10rpx;
 
 		>.name {
@@ -196,8 +203,12 @@
 		}
 
 		>.search-area {
-			background: #ff512e;
-
+			/* #ifdef APP-PLUS */
+			background: @redBg;
+			/* #endif */
+			/* #ifdef MP-ALIPAY */
+			background: @orangeBg;
+			/* #endif */
 			>.search-input-view {
 				margin: 0 auto;
 				width: 702rpx;

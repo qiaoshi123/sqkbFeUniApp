@@ -46,9 +46,6 @@
 .header > .search-area-space {
   height: 104rpx;
 }
-.header > .search-area {
-  background: #ff512e;
-}
 .header > .search-area > .search-input-view {
   margin: 0 auto;
   width: 702rpx;

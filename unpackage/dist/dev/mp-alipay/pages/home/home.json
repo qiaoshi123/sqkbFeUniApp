@@ -1,7 +1,7 @@
 {
   "defaultTitle": "省钱快报",
   "pullRefresh": true,
-  "titleBarColor": "#FF512E",
+  "titleBarColor": "#ffd21c",
   "usingComponents": {
     "sq-single-coupon": "/components/sq-single-coupon/sq-single-coupon"
   }

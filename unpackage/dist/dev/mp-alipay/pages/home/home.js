@@ -1,22 +1,5 @@
 (my["webpackJsonp"] = my["webpackJsonp"] || []).push([["pages/home/home"],{
 
-/***/ 21:
-/*!*******************************************************************************************************!*\
-  !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/main.js?{"page":"pages%2Fhome%2Fhome"} ***!
-  \*******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);__webpack_require__(/*! @dcloudio/uni-stat */ 5);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _home = _interopRequireDefault(__webpack_require__(/*! ./pages/home/home.vue */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_home.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-alipay/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
 /***/ 22:
 /*!************************************************************************************!*\
   !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/pages/home/home.vue ***!
@@ -299,7 +282,24 @@ __webpack_require__.r(__webpack_exports__);
     if(false) { var cssReload; }
   
 
+/***/ }),
+
+/***/ 42:
+/*!*******************************************************************************************************!*\
+  !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/main.js?{"page":"pages%2Fhome%2Fhome"} ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);__webpack_require__(/*! @dcloudio/uni-stat */ 5);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _home = _interopRequireDefault(__webpack_require__(/*! ./pages/home/home.vue */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_home.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-alipay/dist/index.js */ 1)["createPage"]))
+
 /***/ })
 
-},[[21,"common/runtime","common/vendor"]]]);
+},[[42,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-alipay/pages/home/home.js.map

@@ -6,7 +6,7 @@
   right: 20rpx;
 }
 .header {
-  background: #ff512e;
+  background: #ffd21c;
   padding-bottom: 10rpx;
 }
 .header > .name {
@@ -47,7 +47,7 @@
   height: 104rpx;
 }
 .header > .search-area {
-  background: #ff512e;
+  background: #ffd21c;
 }
 .header > .search-area > .search-input-view {
   margin: 0 auto;

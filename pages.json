@@ -1,15 +1,30 @@
 {
-	"pages": [{
-		"path": "pages/home/home",
-		"style": {
-			"navigationBarTitleText": "省钱快报",
-			"enablePullDownRefresh": true,
-			"navigationBarBackgroundColor": "#FF512E"
+	"pages": [
+		// #ifdef MP-WEIXIN
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "省钱快报",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#FF512E"
+			}
+		},
+		// #endif
+		// #ifdef MP-ALIPAY
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "省钱快报",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#ffd21c"
+			}
+		},
+		// #endif
+		{
+			"path": "pages/detail/detail",
+			"style": {}
 		}
-	}, {
-		"path": "pages/detail/detail",
-		"style": {}
-	}],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "",
