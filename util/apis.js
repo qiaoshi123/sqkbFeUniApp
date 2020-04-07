@@ -1,6 +1,6 @@
 let apiBaseUrls = {
   prod:'https://api.17gwx.com',
-  dev:'http://dev.17gwx.com',
+  dev:'http://beta.17gwx.com',
   beta:'http://beta.17gwx.com'
 }
 //api值管理

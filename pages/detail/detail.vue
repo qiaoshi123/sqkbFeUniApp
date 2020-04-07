@@ -14,7 +14,7 @@
 			<!-- 商品头图  -->
 			<view class="swiper-area" v-if="couponInfo.cover_pics && couponInfo.cover_pics.length>0">
 				<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" class="swiper-outer"
-				 bindchange="swiperChange">
+				 @change="swiperChange">
 					<swiper-item class="swiper-inner" v-for="(item,index) in couponInfo.cover_pics" :key="item">
 						<view class="swiper-view">
 							<image :src="item" lazy-load="true"></image>
@@ -88,34 +88,34 @@
 				<!-- 相似推荐有数据 && 详情没数据 -->
 				<view class="tabs-one" v-if="recommendList.length>0 && descPics.length<=0">
 					<view class="item">
-						<view class="text active" data-index="0">相似推荐</view>
+						<view class="text active" data-index="1" @click="clickChangeTab">相似推荐</view>
 					</view>
 				</view>
 				<!-- 相似推荐无数据 && 详情有数据 -->
-				<!-- 		<view class="tabs-one" v-if="recommendList.length<=0 && descPics.length>0">
+						<view class="tabs-one" v-if="recommendList.length<=0 && descPics.length>0">
 					<view class="item">
-						<view class="text active" data-index="1">商品详情</view>
+						<view class="text active" data-index="1" @click="clickChangeTab">商品详情</view>
 					</view>
-				</view> -->
+				</view>
 
-				<!-- 	<view class="content">
+					<view class="content">
 					<view class="recommed-list" v-if="activeIndex==0">
-						<singleGood v-for="(item,key) in recommendList" :key="item.coupon_id" :coupon="item"></singleGood>
+						<SqSingleCoupon v-for="(item,key) in recommendList" :key="item.coupon_id" :coupon="item"></SqSingleCoupon>
 					</view>
 					<view class="detail-desc" v-if="activeIndex==1">
 						<image v-for="(item,index) in descPics" :key="item.url" :src="item.url" mode="widthFix" lazy-load="true"></image>
 					</view>
-				</view> -->
+				</view>
 			</view>
 			<!-- 底部购买 -->
-			<!-- 	<view class="footer">
+				<view class="footer">
 				<view class="wxshare">
 					<image src="/static/image/coupon/wx-icon.png"></image>
 					<view class="share-text">分享</view>
 					<button open-type="share"></button>
 				</view>
 				<view class="buy-btn">{{ticketInfo.hasTicket?'领券购买':'立即购买'}}</view>
-			</view> -->
+			</view>
 		</view>
 		</block>
 
@@ -123,7 +123,12 @@
 	</view>
 </template>
 <script>
+	import SqSingleCoupon from '@/components/sq-single-coupon/sq-single-coupon.vue'
+	
 	export default {
+		components: {
+			SqSingleCoupon
+		},
 		data() {
 			return {
 				isAndroid: false, //wx.util.getDeviceInfo().android,
@@ -163,19 +168,27 @@
 						android: '',
 						ios: ''
 					},
-
-					couponInfo: null,
-					ticketInfo: null,
-					inputDefaultText: ''
-				}
+				},
+				onlyDetailPlatforms: [6, 7], //仅支持详情页的
+				//商品信息
+				couponInfo: '',
+				ticketInfo: { //券信息
+					hasTicket: false,
+					endTime: '',
+					startTime: '',
+					ticketPrice: '',
+				}, //是否有券
+				inputDefaultText: '', //input 默认文案
+				recommendList: [],
+				activeIndex: -1, //相似推荐和商品详情所选中索引
+				descPics: []
 			}
 		},
 
 		onLoad(option) {
-			console.log(option);
 			this.couponId = option.coupon_id;
-			this.platform_id = option.platform_id;
-			this.getDetail(); 
+			this.platformId = option.platform_id;
+			this.getDetail();
 		},
 		methods: {
 			/**
@@ -194,16 +207,17 @@
 					if (res.status_code == 1) {
 						let couponInfo = res.data.coupon_info;
 						//处理第三方h5地址
+						console.log(couponInfo.url)
 						couponInfo.url = couponInfo.url.includes('http') ? couponInfo.url : 'https://' + couponInfo.url;
 						//生成input默认文案
 						let inputDefaultText = this.getInputDetaultText(couponInfo);
 						//生成券信息
 						let ticketInfo = this.getTicketInfo(couponInfo);
-						this.setData({
-							couponInfo,
-							ticketInfo,
-							inputDefaultText
-						})
+						
+						this.couponInfo = couponInfo;
+						this.ticketInfo = ticketInfo;
+						this.inputDefaultText = inputDefaultText;
+
 						this.getRecommendList();
 						console.log(couponInfo)
 					} else {
@@ -218,6 +232,15 @@
 					})
 				})
 			},
+			  /**
+			   * 切换相似推荐和商品详情
+			   */
+			  clickChangeTab(e) {
+				  console.log(e);
+			    this.setData({
+			      activeIndex: 1
+			    })
+			  },
 			/**
 			 * js处理券信息
 			 */
@@ -255,6 +278,8 @@
 			 * 生成顶部input 默认文案
 			 */
 			getInputDetaultText(couponInfo) {
+				console.log('this.onlyDetailPlatforms');
+				console.log(this.onlyDetailPlatforms);
 				if (this.onlyDetailPlatforms.indexOf(couponInfo.platform_id) > -1) {
 					return couponInfo.title;
 				} else {
@@ -288,11 +313,10 @@
 						} else if (recommendList.length > 0 && descPics.length > 0) {
 							activeIndex = 0;
 						}
-						this.setData({
-							recommendList,
-							descPics,
-							activeIndex
-						})
+						
+						this.recommendList = recommendList;
+						this.descPics = descPics;
+						this.activeIndex = activeIndex;
 					} else {
 						uni.showToast({
 							title: res.message
