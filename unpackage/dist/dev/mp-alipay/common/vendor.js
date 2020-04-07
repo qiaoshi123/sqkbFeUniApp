@@ -9234,7 +9234,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "defaultTitle": "省钱快报", "usingComponents": {}, "usingAutoImportComponents": { "uni-card": "/components/uni-card/uni-card", "uni-link": "/components/uni-link/uni-link" } }, "pages/detail/detail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/home/home": { "defaultTitle": "省钱快报", "pullRefresh": true, "titleBarColor": "#FF512E", "usingComponents": { "sq-single-coupon": "/components/sq-single-coupon/sq-single-coupon" }, "usingAutoImportComponents": {} } }, "globalStyle": { "defaultTitle": "", "titleBarColor": "#000000", "backgroundColor": "#ffffff" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "defaultTitle": "省钱快报", "pullRefresh": true, "titleBarColor": "#FF512E" }, "pages/detail/detail": {} }, "globalStyle": { "defaultTitle": "", "titleBarColor": "#000000", "backgroundColor": "#ffffff" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -9381,16 +9381,7 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */
+/* 15 */
 /*!************************************************************************************!*\
   !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/util/requestUtil.js ***!
   \************************************************************************************/
@@ -9398,7 +9389,7 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.requestSqkb = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! md5 */ 25));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {return;}var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.requestSqkb = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! md5 */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {return;}var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
 var appSecrets = {
   '20': '7fbfb8f3634c94b81f55d5c3e0d94e7a',
   '21': '7c8bef179771cb6771111d69d9da1d44' };
@@ -9465,7 +9456,7 @@ var setSign = function setSign(qs, app_secret) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-alipay/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 25 */
+/* 16 */
 /*!****************************************************************************************!*\
   !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/node_modules/md5/md5.js ***!
   \****************************************************************************************/
@@ -9474,10 +9465,10 @@ var setSign = function setSign(qs, app_secret) {
 
 "use strict";
 (function () {
-  var crypt = __webpack_require__(/*! crypt */ 26),
-  utf8 = __webpack_require__(/*! charenc */ 27).utf8,
-  isBuffer = __webpack_require__(/*! is-buffer */ 28),
-  bin = __webpack_require__(/*! charenc */ 27).bin,
+  var crypt = __webpack_require__(/*! crypt */ 17),
+  utf8 = __webpack_require__(/*! charenc */ 18).utf8,
+  isBuffer = __webpack_require__(/*! is-buffer */ 19),
+  bin = __webpack_require__(/*! charenc */ 18).bin,
 
   // The core
   md5 = function md5(message, options) {
@@ -9635,7 +9626,7 @@ var setSign = function setSign(qs, app_secret) {
 })();
 
 /***/ }),
-/* 26 */
+/* 17 */
 /*!********************************************************************************************!*\
   !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/node_modules/crypt/crypt.js ***!
   \********************************************************************************************/
@@ -9741,7 +9732,7 @@ var setSign = function setSign(qs, app_secret) {
 })();
 
 /***/ }),
-/* 27 */
+/* 18 */
 /*!************************************************************************************************!*\
   !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/node_modules/charenc/charenc.js ***!
   \************************************************************************************************/
@@ -9784,7 +9775,7 @@ var charenc = {
 module.exports = charenc;
 
 /***/ }),
-/* 28 */
+/* 19 */
 /*!*****************************************!*\
   !*** ./node_modules/is-buffer/index.js ***!
   \*****************************************/
@@ -9815,7 +9806,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 29 */
+/* 20 */
 /*!*****************************************************************************!*\
   !*** /Users/yundongjiutian/Desktop/git-examples/sqkbFe/sqkbFe/util/apis.js ***!
   \*****************************************************************************/

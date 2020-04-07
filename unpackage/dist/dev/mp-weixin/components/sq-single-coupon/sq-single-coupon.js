@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -177,8 +177,11 @@ var _default =
               * 点击商品
               */
     clickCoupon: function clickCoupon() {
-      console.log("点击商品跳转");
+      uni.navigateTo({
+        url: "/pages/detail/detail?coupon_id=".concat(this.coupon.coupon_id, "&platform_id=").concat(this.coupon.platform_id) });
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
