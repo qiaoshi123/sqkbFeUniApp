@@ -103,6 +103,7 @@
   top: -12rpx;
   /*历史搜索*/
   /*搜索发现*/
+  /*商品*/
 }
 .content .history-search-area {
   margin: 22rpx 24rpx 0 32rpx;
@@ -148,7 +149,6 @@
 }
 .content .discover-search-area {
   margin: 32rpx 36rpx 0;
-  /*商品*/
 }
 .content .discover-search-area .discover-title {
   height: 32rpx;
@@ -185,16 +185,16 @@
   font-weight: 400;
   color: #616168;
 }
-.content .discover-search-area .coupon-area {
+.content .coupon-area {
   margin-top: 56rpx;
 }
-.content .discover-search-area .coupon-area .title-bg {
+.content .coupon-area .title-bg {
   display: block;
   width: 331rpx;
   height: 47rpx;
   margin: 0 auto;
 }
-.content .discover-search-area .coupon-area .coupon-list {
+.content .coupon-area .coupon-list {
   margin-top: 24rpx;
   padding-bottom: 24rpx;
 }

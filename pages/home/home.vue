@@ -311,20 +311,23 @@
 					color: rgba(97, 97, 104, 1);
 				}
 			}
-			/*商品*/
-			.coupon-area {
-				margin-top: 56rpx;
-				.title-bg {
-					display: block;
-					width: 331rpx;
-					height: 47rpx;
-					margin: 0 auto;
-				}
-				.coupon-list {
-					margin-top: 24rpx;
-					padding-bottom: 24rpx;
-				}
-			}
+			
+		}
+	/*商品*/
+	.coupon-area {
+		margin-top: 56rpx;
+		.title-bg {
+			display: block;
+			width: 331rpx;
+			height: 47rpx;
+			margin: 0 auto;
+		}
+		.coupon-list {
+			margin-top: 24rpx;
+			padding-bottom: 24rpx;
 		}
 	}
+		
+	}
+	
 </style>
