@@ -255,6 +255,7 @@ __webpack_require__.r(__webpack_exports__);
         if (res.status_code == 1) {
           var hotList = res.data || [];
           _this.hotList = hotList;
+
         } else {
           uni.showToast({
             title: res.message });
@@ -277,6 +278,8 @@ __webpack_require__.r(__webpack_exports__);
         method: "POST" };
 
       uni.requestSqkb(options).then(function (res) {
+        uni.stopPullDownRefresh();
+        uni.hideLoading();
         if (res.status_code == 1) {
           var couponList = res.data.coupon_list || [];
           _this2.couponList = couponList;
@@ -291,6 +294,13 @@ __webpack_require__.r(__webpack_exports__);
           title: e.message });
 
       });
+    },
+    /**
+        * 下拉刷新
+        */
+    onPullDownRefresh: function onPullDownRefresh() {
+      uni.showLoading();
+      this.getCouponList();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-alipay/dist/index.js */ 1)["default"]))
 

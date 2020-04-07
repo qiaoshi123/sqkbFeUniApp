@@ -86,6 +86,7 @@
 					if (res.status_code == 1) {
 						let hotList = res.data || [];
 						this.hotList = hotList;
+						
 					} else {
 						uni.showToast({
 							title: res.message
@@ -108,6 +109,8 @@
 					method: "POST"
 				}
 				uni.requestSqkb(options).then(res => {
+					uni.stopPullDownRefresh();
+					uni.hideLoading();
 					if (res.status_code == 1) {
 						let couponList = res.data.coupon_list || [];
 						this.couponList = couponList;
@@ -122,6 +125,13 @@
 						title: e.message
 					})
 				})
+			},
+			/**
+			 * 下拉刷新
+			 */
+			onPullDownRefresh() {
+				uni.showLoading();
+				this.getCouponList();
 			},
 		}
 	}
@@ -321,6 +331,7 @@
 			}
 
 		}
+
 		/*商品*/
 		.coupon-area {
 			margin-top: 56rpx;

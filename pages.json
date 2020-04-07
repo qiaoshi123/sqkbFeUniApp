@@ -3,7 +3,7 @@
 		"path": "pages/home/home",
 		"style": {
 			"navigationBarTitleText": "省钱快报",
-			"enablePullDownRefresh":true,
+			"enablePullDownRefresh": true,
 			"navigationBarBackgroundColor": "#FF512E"
 		}
 	}, {

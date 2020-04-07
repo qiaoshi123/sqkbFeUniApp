@@ -9234,7 +9234,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "defaultTitle": "省钱快报", "usingComponents": {}, "usingAutoImportComponents": { "uni-card": "/components/uni-card/uni-card", "uni-link": "/components/uni-link/uni-link" } }, "pages/detail/detail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/home/home": { "defaultTitle": "省钱快报", "pullRefresh": true, "titleBarColor": "#FF512E", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "defaultTitle": "", "titleBarColor": "#000000", "backgroundColor": "#ffffff" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "defaultTitle": "省钱快报", "usingComponents": {}, "usingAutoImportComponents": { "uni-card": "/components/uni-card/uni-card", "uni-link": "/components/uni-link/uni-link" } }, "pages/detail/detail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/home/home": { "defaultTitle": "省钱快报", "pullRefresh": true, "titleBarColor": "#FF512E", "usingComponents": { "sq-single-coupon": "/components/sq-single-coupon/sq-single-coupon" }, "usingAutoImportComponents": {} } }, "globalStyle": { "defaultTitle": "", "titleBarColor": "#000000", "backgroundColor": "#ffffff" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
