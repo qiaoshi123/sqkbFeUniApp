@@ -30,13 +30,13 @@
 			<view class="discover-search-area" v-if="hotList.length>0">
 				<view class="discover-title">搜索发现</view>
 				<view class="discover-group">
-					<view class="discover-item ellipsis" v-for="(v,i) in hotList" @click="clickSearchItem">{{v}}</view>
+					<view class="discover-item ellipsis" v-for="(v,i) in hotList" :key="i" @click="clickSearchItem">{{v}}</view>
 				</view>
 			</view>
 			<view class="coupon-area" v-if="couponList.length > 0">
 				<image src="/static/image/home/home-coupon-area-bg.png" class="title-bg"></image>
 				<view class="coupon-list">
-					<SqSingleCoupon v-for="(v,i) in couponList" :coupon="v"></SqSingleCoupon>
+					<SqSingleCoupon v-for="(v,i) in couponList" :coupon="v" :key='i'></SqSingleCoupon>
 				</view>
 			</view>
 		</view>
