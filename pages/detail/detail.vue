@@ -132,10 +132,10 @@
 		data() {
 			return {
 				// #ifndef H5
-				headerFixeTop:0,
+				headerFixeTop: 0,
 				// #endif
 				// #ifdef H5
-				headerFixeTop:uni.getSystemInfoSync().windowTop+'px',
+				headerFixeTop: uni.getSystemInfoSync().windowTop + 'px',
 				// #endif
 				isAndroid: false, //wx.util.getDeviceInfo().android,
 				goAppClass: '',
