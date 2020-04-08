@@ -78,31 +78,31 @@
 			<view class="other-content">
 				<!-- 相似推荐有数据  && 详情有数据 -->
 				<view class="tabs" v-if="recommendList.length>0 && descPics.length>0">
-					<view class="item" data-index="0">
+					<view class="item">
 						<view :class="['text',{'active':activeIndex==0}]" @click="clickChangeTab(0)">相似推荐</view>
 					</view>
-					<view class="item" data-index="1">
+					<view class="item">
 						<view :class="['text',{'active':activeIndex==1}]" @click="clickChangeTab(1)">商品详情</view>
 					</view>
 				</view>
 				<!-- 相似推荐有数据 && 详情没数据 -->
 				<view class="tabs-one" v-if="recommendList.length>0 && descPics.length<=0">
 					<view class="item">
-						<view class="text active" data-index="1" @click="clickChangeTab(0)">相似推荐</view>
+						<view class="text active" @click="clickChangeTab(0)">相似推荐</view>
 					</view>
 				</view>
 				<!-- 相似推荐无数据 && 详情有数据 -->
 				<view class="tabs-one" v-if="recommendList.length<=0 && descPics.length>0">
 					<view class="item">
-						<view class="text active" data-index="1" @click="clickChangeTab(1)">商品详情</view>
+						<view class="text active" @click.stop="clickChangeTab(1)">商品详情</view>
 					</view>
 				</view>
 
 				<view class="content">
-					<view class="recommed-list" v-if="activeIndex==0">
+					<view class="recommed-list" v-show="activeIndex==0">
 						<SqSingleCoupon v-for="(item,key) in recommendList" :key="item.coupon_id" :coupon="item"></SqSingleCoupon>
 					</view>
-					<view class="detail-desc" v-if="activeIndex==1">
+					<view class="detail-desc" v-show="activeIndex==1">
 						<image v-for="(item,index) in descPics" :key="item.url" :src="item.url" mode="widthFix" lazy-load="true"></image>
 					</view>
 				</view>
@@ -275,14 +275,15 @@
 				})
 			},
 			/**
-			 * 切换相似推荐和商品详情
+			 * 切换相似推荐和商品详
+			 * @param {Object} type 0推荐 1商品详情
 			 */
 			clickChangeTab(type) {
-				console.log(type);
 				this.activeIndex = type
 			},
 			/**
 			 * swiper 滑动事件
+			 * @param {Object} e
 			 */
 			swiperChange(e) {
 				let swiperCurIndex = e.detail.current;
@@ -863,6 +864,7 @@
 	.content {
 		margin-top: 10rpx;
 		padding-bottom: 100rpx;
+		min-height: 100rpx;
 	}
 
 	.content>.recommend-list {}
