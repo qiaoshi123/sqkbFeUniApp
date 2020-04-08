@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view v-if="couponInfo">
-			<view class="header">
+			<view class="header" :style="{top:headerFixeTop}">
 				<view class="search-area">
 					<view class="input-area">
 						<image src="/static/image/common/search-icon.png"></image>
@@ -131,6 +131,12 @@
 		},
 		data() {
 			return {
+				// #ifndef H5
+				headerFixeTop:0,
+				// #endif
+				// #ifdef H5
+				headerFixeTop:uni.getSystemInfoSync().windowTop+'px',
+				// #endif
 				isAndroid: false, //wx.util.getDeviceInfo().android,
 				goAppClass: '',
 				couponId: '',
@@ -222,9 +228,10 @@
 			 * 设置标题栏
 			 */
 			setTitleBar() {
-				// #ifdef MP-WEIXIN
+				// #ifdef MP-WEIXIN || H5
 				uni.setNavigationBarColor({
-					backgroundColor: '#FF512E'
+					backgroundColor: '#FF512E',
+					frontColor: '#ffffff'
 				})
 				// #endif
 				// #ifdef MP-ALIPAY

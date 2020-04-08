@@ -12,7 +12,7 @@
 			<!-- #endif -->
 			<image src="/static/image/home/home-fee-bg.png" class="fee-bg"></image>
 			<view class="search-area-space" v-if="searchFixed"></view>
-			<view class="search-area" :class="{'fixed':searchFixed,'not-fixed':!searchFixed}" id="searchArea">
+			<view class="search-area" :class="{'fixed':searchFixed,'not-fixed':!searchFixed}" :style="{ top: fixedTop}" id="searchArea">
 				<view class="search-input-view" bindtap="clickSearchArea">
 					<image src="/static/image/common/black-search-icon.png" class="search-icon"></image>
 					<view class="hot-words">粘贴商品链接或标题，查询优惠券</view>
@@ -57,7 +57,8 @@
 				searchFixed: false,
 				showAddMpToList: true,
 				couponList: [],
-				hotList: []
+				hotList: [],
+				fixedTop:0,
 			};
 		},
 		onLoad() {
@@ -164,11 +165,18 @@
 				let st = e.scrollTop;
 				if (st >= this.searchFixedTop) {
 					this.searchFixed = true;
+					// #ifndef H5
+					this.fixedTop = 0;
+					// #endif
+					// #ifdef H5
+					this.fixedTop = uni.getSystemInfoSync().windowTop+'px'
+					// #endif
 					uni.setNavigationBarTitle({
 						title: '省钱快报优惠券查询'
 					})
 				} else {
 					this.searchFixed = false;
+					this.fixedTop = 0;
 					uni.setNavigationBarTitle({
 						title: ''
 					})
@@ -192,7 +200,7 @@
 	}
 
 	.header {
-		/* #ifdef MP-WEIXIN */
+		/* #ifdef MP-WEIXIN || H5 */
 		background: @redBg;
 		/* #endif */
 		/* #ifdef MP-ALIPAY */
@@ -244,7 +252,7 @@
 		}
 
 		>.search-area {
-			/* #ifdef MP-WEIXIN */
+			/* #ifdef MP-WEIXIN || H5 */
 			background: @redBg;
 			/* #endif */
 			/* #ifdef MP-ALIPAY */
