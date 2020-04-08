@@ -1,7 +1,7 @@
 let apiBaseUrls = {
   prod:'https://api.17gwx.com',
   // #ifdef H5
-  dev:'http://localhost:8001/api',
+  dev:'/api',
   // #endif
   // #ifndef H5
   dev:'http://dev.17gwx.com',
