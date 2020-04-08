@@ -1,50 +1,46 @@
 {
-    "pages" : [
+	"pages": [
 		// #ifdef H5
 		{
-		    "path" : "pages/home/home",
-		    "style" : {
-		        "navigationBarTitleText" : "省钱快报",
-		        "enablePullDownRefresh" : true,
-		        "navigationBarBackgroundColor" : "#FF512E"
-		    }
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "省钱快报",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#FF512E"
+			}
 		},
 		// #endif
-        // #ifdef MP-WEIXIN
-        {
-            "path" : "pages/home/home",
-            "style" : {
-                "navigationBarTitleText" : "省钱快报",
-                "enablePullDownRefresh" : true,
-                "navigationBarBackgroundColor" : "#FF512E"
-            }
-        },
-        // #endif
-        // #ifdef MP-ALIPAY
-        {
-            "path" : "pages/home/home",
-            "style" : {
-                "navigationBarTitleText" : "省钱快报",
-                "enablePullDownRefresh" : true,
-                "navigationBarBackgroundColor" : "#ffd21c"
-            }
-        },
-        // #endif
-        {
-            "path" : "pages/detail/detail",
-            "style" : {
-                "navigationBarTitleText" : "商品详情"
-            }
-        },
-        {
-            "path" : "App",
-            "style" : {}
-        }
-    ],
-    "globalStyle" : {
-        "navigationBarTextStyle" : "white",
-        "navigationBarTitleText" : "",
-        "navigationBarBackgroundColor" : "#000000",
-        "backgroundColor" : "#ffffff"
-    }
+		// #ifdef MP-WEIXIN
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "省钱快报",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#FF512E"
+			}
+		},
+		// #endif
+		// #ifdef MP-ALIPAY
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "省钱快报",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#ffd21c"
+			}
+		},
+		// #endif
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#000000",
+		"backgroundColor": "#ffffff"
+	}
 }
