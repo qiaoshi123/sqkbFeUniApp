@@ -12,6 +12,7 @@ export let requestSqkb = ({
 	if (method == 'POST') {
 		header['content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
 	}
+	header['Access-Control-Allow-Origin'] = '*'
 	if(!url){
 		let error = new Error('缺少参数');
 		return Promise.reject(error);

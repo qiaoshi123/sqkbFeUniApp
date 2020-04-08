@@ -1,6 +1,11 @@
 let apiBaseUrls = {
   prod:'https://api.17gwx.com',
-  dev:'http://beta.17gwx.com',
+  // #ifdef H5
+  dev:'http://localhost:8001/api',
+  // #endif
+  // #ifndef H5
+  dev:'http://dev.17gwx.com',
+  // #endif
   beta:'http://beta.17gwx.com'
 }
 //api值管理

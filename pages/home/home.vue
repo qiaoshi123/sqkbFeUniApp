@@ -63,8 +63,10 @@
 		onLoad() {
 			this.getHotWord();
 			this.getCouponList();
-			this.getSearchFixedNum();
 			console.log(uni.getSystemInfoSync())
+		},
+		mounted() {
+			this.getSearchFixedNum();
 		},
 		methods: {
 			/**
@@ -152,7 +154,7 @@
 				const query = uni.createSelectorQuery()
 				query.select('#searchArea').boundingClientRect()
 				query.exec((res) => {
-					this.searchFixedTop = res[0].top
+					this.searchFixedTop = res[0]?res[0].top:0
 				})
 			},
 			/**

@@ -249,8 +249,7 @@
 					if (res.status_code == 1) {
 						let couponInfo = res.data.coupon_info;
 						//处理第三方h5地址
-						console.log(couponInfo.url)
-						couponInfo.url = couponInfo.url.includes('http') ? couponInfo.url : 'https://' + couponInfo.url;
+						couponInfo.url = couponInfo.url && couponInfo.url.includes('http') ? couponInfo.url : 'https://' + couponInfo.url;
 						//生成input默认文案
 						let inputDefaultText = this.getInputDetaultText(couponInfo);
 						//生成券信息
@@ -261,7 +260,6 @@
 						this.inputDefaultText = inputDefaultText;
 
 						this.getRecommendList();
-						console.log(couponInfo)
 					} else {
 						uni.showToast({
 							title: res.message
@@ -326,8 +324,6 @@
 			 * 生成顶部input 默认文案
 			 */
 			getInputDetaultText(couponInfo) {
-				console.log('this.onlyDetailPlatforms');
-				console.log(this.onlyDetailPlatforms);
 				if (this.onlyDetailPlatforms.indexOf(couponInfo.platform_id) > -1) {
 					return couponInfo.title;
 				} else {
